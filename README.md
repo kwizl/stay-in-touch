@@ -43,7 +43,7 @@ Setup database with:
 
 You can clone or download this repo (you need ruby installed in your computer).
 
-    git clone git@github.com:kwizl/private-events.git
+    git clone git@github.com:abdelp/private-events.git
 Start server with:
 
 ```
