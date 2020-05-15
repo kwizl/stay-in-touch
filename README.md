@@ -1,6 +1,6 @@
-# Scaffold for social media app with Ruby on Rails
+# Social Media App with Ruby on Rails
 
-> This repo includes intial code for social media app with basic styling. Its purpose is to be a starting point for Microverse students.
+> This repo contains code for a social media web application. The application enables registration of users, Sign In of users, posting comments, liking posts and sending friendship request.
 
 ## Built With
 
@@ -41,29 +41,30 @@ Setup database with:
 
 ### Usage
 
+You can clone or download this repo (you need ruby installed in your computer).
+
+    git clone git@github.com:kwizl/private-events.git
 Start server with:
 
 ```
     rails server
 ```
-
 Open `http://localhost:3000/` in your browser.
 
-### Run tests
-
-```
-    rpsec --format documentation
-```
-
-> Tests will be added by Microverse students. There are no tests for initial features in order to make sure that students write all tests from scratch.
-
-### Deployment
-
-TBA
 
 ## Authors
 
-TBA
+👤 **Martin Njoroge**
+
+- Github: [@kwizl](https://github.com/kwizl)
+- Twitter: [@NjoroKaris](https://twitter.com/NjoroKaris)
+- Linkedin: [martin njoroge](https://www.linkedin.com/in/martin-njoroge-098774110/)
+
+👤 **Abdel Omar Pérez Téllez**
+
+- Github: [abdelp](https://github.com/abdelp)
+- Twitter: [@abdelperez11](https://twitter.com/abdelperez11) 
+- Linkedin: [abdel-perez](https://www.linkedin.com/in/abdel-perez/)
 
 ## 🤝 Contributing
 
@@ -74,12 +75,3 @@ Feel free to check the [issues page](issues/).
 ## Show your support
 
 Give a ⭐️ if you like this project!
-
-## Acknowledgments
-
-TBA
-
-## 📝 License
-
-TBA
-
