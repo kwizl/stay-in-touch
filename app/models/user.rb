@@ -8,8 +8,22 @@ class User < ApplicationRecord
 
   has_many :friendships
   has_many :friends, through: :friendships
-
+  has_many :inverse_friendships, class_name: "Friendship", foreign_key: "friend_id"
   has_many :posts
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
+
+  def accepted(user)
+    friendship = inverse_friendships.map{ |friendship| friendship.friend if friendship.user == user }
+    friendship.status = 'a'
+    friendship.save
+  end
+
+  def pending
+
+  end
+
+  def rejected
+
+  end
 end
