@@ -33,7 +33,9 @@ class User < ApplicationRecord
     friends_array.compact
   end
 
-  def rejected
-
+  def reject_friend(user)
+    friendship = inverse_friendships.find{ |friendship| friendship.user == user }
+    friendship.status = 'r'
+    friendship.save
   end
 end
