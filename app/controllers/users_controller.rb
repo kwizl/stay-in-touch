@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  include UsersHelper
   before_action :authenticate_user!
 
   def index
@@ -10,5 +11,4 @@ class UsersController < ApplicationController
     @posts = @user.posts.ordered_by_most_recent
   end
 
-  
 end
