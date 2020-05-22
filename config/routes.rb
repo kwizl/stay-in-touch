@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     resources :comments, only: [:create]
     resources :likes, only: [:create, :destroy]
   end
+  get "request/user" => "users#request_user", as: :request_user
   post "follow/user" => "users#follow_user", as: :follow_user
   post 'send_invitation' => 'users#send_invitation'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

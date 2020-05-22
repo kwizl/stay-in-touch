@@ -10,7 +10,12 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @posts = @user.posts.ordered_by_most_recent
   end
-  
+ 
+  def request_user
+    @requests = User.find_by_sql(
+      ["SELECT * FROM users u JOIN friendships f ON u.id = f.user_id WHERE f.status = 'p' AND f.friend_id = ?", current_user.id])
+  end
+ 
   def follow_user
     user_id = params[:user_id]
     if Friendship.create(user_id: current_user.id, friend_id: user_id)
