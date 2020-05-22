@@ -1,15 +1,20 @@
 module UsersHelper
-  def send_invitation
-    current_user.friendships.create(friend_id: params[:user_id])
-  end
+  def send_button(user)
+    html = ''
 
-  def send_button(user_id)
-    class_name = current_user.friends.find() ? 'bnt-disabled' : 'btn'
+    if !current_user.friend?(user.id)
+      pending_friend = current_user.pending_friends.find { |friend| friend.id == user.id }
+      if pending_friend
+        title = 'Pending'
+        link = '#'
+      else
+        title = 'Add'
+        link = send_invitation_path(user_id: user.id)
+      end
 
-    html = button_to "Add", send_invitation_path(user_id: user_id),
-                      class: "btn btn-primary", disabled: current_user.friend?(user_id),
-                      data: { disable_with: "Add" }
-  
+      html = button_to title, link, class: "btn btn-primary", disabled: pending_friend, data: { disabled_with: 'Pending' }
+    end
+
     html.html_safe
   end
 end

@@ -33,7 +33,7 @@ class User < ApplicationRecord
   end
 
   def pending_friends
-    friends_array = friendships.map{ |friendship| friendship.friend if !friendship.status = 'p' }
+    friends_array = friendships.map{ |friendship| friendship.friend if friendship.status == 'p' }
     friends_array.compact
   end
 
