@@ -7,10 +7,6 @@
           <%= link_to 'See Profile',  user_path(user), class: 'profile-link' %>
         </span>
         <%= send_button(user) %>
-        <%= form_tag follow_user_path, method: :post do %>
-          <%= hidden_field_tag :user_id, user.id %>
-          <%= submit_tag "Request", class: 'btn btn-primary btn-sm' %>
-        <% end %>
       </li>
     <% end %>
   </ul>

@@ -13,10 +13,6 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
 
-  def pending
-    self.status = 'p'
-  end
-
   def friends
     friends_array = friendships.map{ |friendship| friendship.friend if friendship.status == 'a' }
     friends_array.compact
@@ -30,6 +26,11 @@ class User < ApplicationRecord
 
   def friend?(user)
     friends.include?(user)
+  end
+
+  def pending_users
+    friends_array = friendships.map{ |friendship| friendship.user if friendship.status == 'p' }
+    friends_array.compact
   end
 
   def pending_friends

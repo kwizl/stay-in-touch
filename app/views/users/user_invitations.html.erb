@@ -1,0 +1,21 @@
+<section class="users-section">
+  <ul class="users-list">
+    <% @invites.each do |user| %>
+      <li>
+        Name: <%= user.name %>
+        <span class="profile-link">
+          <%= link_to 'See Profile',  user_path(user), class: 'profile-link' %>
+        </span>
+        <%= form_tag accept_user_path, method: :post do %>
+          <%= hidden_field_tag :user_id, user.id %>
+          <%= submit_tag "Accept", class: 'btn btn-primary btn-sm' %>
+        <% end %>
+        <%= form_tag reject_user_path, method: :post do %>
+          <%= hidden_field_tag :user_id, user.id %>
+          <%= submit_tag "Reject", class: 'btn btn-primary btn-sm' %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</section>
+

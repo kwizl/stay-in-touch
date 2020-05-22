@@ -11,7 +11,10 @@ Rails.application.routes.draw do
     resources :comments, only: [:create]
     resources :likes, only: [:create, :destroy]
   end
-  post "follow/user" => "users#follow_user", as: :follow_user
+  
+  get 'user_invitations' => 'users#user_invitations', as: :user_invitations
+  post 'accept_user' => 'users#accept', as: :accept_user
+  post 'reject_user' => 'users#reject', as: :reject_user 
   post 'send_invitation' => 'friendships#create'
   post 'cancel_invitation' => 'friendships#destroy'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
