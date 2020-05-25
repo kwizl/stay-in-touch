@@ -13,8 +13,9 @@ Rails.application.routes.draw do
   end
   
   get 'user_invitations' => 'users#user_invitations', as: :user_invitations
-  post 'accept_user' => 'users#accept', as: :accept_user
-  post 'reject_user' => 'users#reject', as: :reject_user 
+  get "friends/user" => "users#friends_user", as: :friends_user
+  post 'accept/user' => 'users#accept', as: :accept_user
+  post 'reject/user' => 'users#reject', as: :reject_user 
   post 'send_invitation' => 'friendships#create'
   post 'cancel_invitation' => 'friendships#destroy'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
