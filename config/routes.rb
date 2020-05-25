@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   resources :friendships, only: [:index, :create, :destroy]
+  patch 'update_friendship', to: 'friendships#update'
   root 'posts#index'
 
   devise_for :users
@@ -12,7 +13,7 @@ Rails.application.routes.draw do
   end
 
   get 'user_invitations' => 'users#user_invitations', as: :user_invitations
-  post 'confirm_friend' => 'users#confirm_friend'
+  # post 'confirm_friend' => 'users#confirm_friend'
   post 'reject_friend' => 'users#reject_friend'
   post 'send_invitation' => 'friendships#create'
   post 'cancel_invitation' => 'friendships#destroy'

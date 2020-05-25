@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   end
 
   def user_invitations
-    @invites = User.find_by_sql(
+    @invites = Friendship.find_by_sql(
       ["SELECT * FROM users u JOIN friendships f ON u.id = f.user_id WHERE f.status = 'p' AND f.friend_id = ?", current_user.id])
   end
 end

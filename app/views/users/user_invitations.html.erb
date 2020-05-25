@@ -6,10 +6,10 @@
         <span class="profile-link">
           <%= link_to 'See Profile', user_path(user), class: 'profile-link' %>
         </span>
-        <%= button_to "Accept", confirm_friend(user), class: 'btn btn-primary' %>
+        <%= button_to "Accept", update_friendship_path({friendship: user, new_status: 'a'}), {class: 'btn btn-primary', method: :patch} %>
         <%= button_to "Reject", reject_friend(user), class: 'btn btn-primary' %>
+        <p><%= user.inspect %></p>
       </li>
     <% end %>
   </ul>
 </section>
-

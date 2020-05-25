@@ -1,4 +1,6 @@
 class FriendshipsController < ApplicationController
+  before_action :set_status, only: [:update]
+
   def index
     @friends = current_user.friends
   end
@@ -16,4 +18,21 @@ class FriendshipsController < ApplicationController
       end
     end
   end
+
+  def update
+    @friendship = Friendship.find(params[:id])
+
+    if @friendship.update(friendship_params)
+      redirect_to :back, method: :get
+    end
+  end
+
+  private
+    def friendship_params
+      params.require(:friendship).permit(:status)
+    end
+
+    def set_status
+      params[:status] = params[:new_status]
+    end
 end
