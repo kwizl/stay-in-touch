@@ -6,10 +6,7 @@
         <span class="profile-link">
           <%= link_to 'See Profile',  user_path(user), class: 'profile-link' %>
         </span>
-        <%= form_tag accept_user_path, method: :post do %>
-          <%= hidden_field_tag :user_id, user.id %>
-          <%= submit_tag "Accept", class: 'btn btn-primary btn-sm' %>
-        <% end %>
+        <%= link_to "Accept", current_user.confirm_friend(user) %>
         <%= form_tag reject_user_path, method: :post do %>
           <%= hidden_field_tag :user_id, user.id %>
           <%= submit_tag "Reject", class: 'btn btn-primary btn-sm' %>
