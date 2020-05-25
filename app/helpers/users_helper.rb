@@ -17,4 +17,12 @@ module UsersHelper
 
     html.html_safe
   end
+
+  def confirm_friend(user)
+    current_user.confirm_friend(user)
+  end
+
+  def reject_friend(user)
+    current_user.reject_friend(user)
+  end
 end

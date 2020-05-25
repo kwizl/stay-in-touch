@@ -20,7 +20,7 @@ class User < ApplicationRecord
 
   def confirm_friend(user_id)
     friendship = inverse_friendships.find{ |friendship| friendship.user_id == user_id && friendship.status == 'p' }
-    friendship.update_attribute(:status, 'a')
+    friendship.update_attribute(:status, 'a') if friendship
   end
 
   def friend?(user)
@@ -39,7 +39,6 @@ class User < ApplicationRecord
 
   def reject_friend(user)
     friendship = inverse_friendships.find{ |friendship| friendship.user == user }
-    friendship.status = 'r'
-    friendship.save
+    friendship.update_attribute(:status, 'r') if friendship
   end
 end
