@@ -8,7 +8,7 @@
         </span>
         <%= button_to "Accept", update_friendship_path({friendship: user, new_status: 'a'}), {class: 'btn btn-primary', method: :patch} %>
         <%= button_to "Reject", reject_invitation_path(user), class: 'btn btn-primary' %>
-        <%# <%= button_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %> %>
+        <%= button_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %>
       </li>
     <% end %>
   </ul>

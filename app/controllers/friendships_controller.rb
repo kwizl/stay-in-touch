@@ -29,10 +29,11 @@ class FriendshipsController < ApplicationController
   end
 
   def destroy
-    @friendship = Friendship.find()
-    if @friendship.destroy
-      redirect_to user_invitations_path,
+    @invites = Friendship.find(params[:id])
+
+    if @invites.destroy
       flash[:notice] = 'Invitation was successfully rejected.'
+      redirect_to user_invitations_path
     end
   end
 
