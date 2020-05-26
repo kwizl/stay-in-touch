@@ -20,19 +20,20 @@ class FriendshipsController < ApplicationController
   end
 
   def update
-    @friendship = Friendship.find(params[:id])
+    @friendship = Friendship.find(params[:friendship])
 
     if @friendship.update(friendship_params)
-      redirect_to :back, method: :get
+      redirect_to user_invitations_path
     end
   end
 
   private
-    def friendship_params
-      params.require(:friendship).permit(:status)
-    end
-
-    def set_status
-      params[:status] = params[:new_status]
-    end
+ 
+  def friendship_params
+    params.permit(:status)
+  end
+  
+  def set_status
+    params[:status] = params[:new_status]
+  end
 end
