@@ -1,7 +1,6 @@
 <li class="post">
   <div>
     <div class='post-attribution' >
-      <p><%= post.comments_count %> Comments</p>
       <%= link_to post.user.name, user_path(post.user), class: 'post-author' %>
     </div>
     <div class='post-liking'>
@@ -12,7 +11,10 @@
   <p class="post-content">
     <%= post.content %>
   </p>
-
+  <div class="post-footer d-flex">
+    <div class="counter-content"><%= pluralize(post.comments_count, 'comment') %></div>
+    <div class="counter-content"><%= pluralize(post.likes_count, 'like') %></div>
+  </div>
   <div class='post-comments-section'>
     <% post.comments.each do |comment| %>
       <div class="post-comments">
