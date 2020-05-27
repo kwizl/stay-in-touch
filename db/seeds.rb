@@ -9,5 +9,5 @@
 User.create!(name: "Abdel Pérez", email: "juniorperezpy@gmail.com",
   password: "123456", password_confirmation: "123456")
 
-User.create!(name: "Martin Njoroge", email: "example@railstutorial.org",
+User.create!(name: "Martin Njoroge", email: "example@rails.com",
   password: "123456", password_confirmation: "123456")
