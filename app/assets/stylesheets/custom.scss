@@ -226,6 +226,14 @@ form {
     margin: 16px 0;
     display: flex;
     flex-direction: column;
+
+    .post-footer {
+      display: flex;
+
+      .counter-content {
+        margin: 5px;
+      }
+    }
   }
 
   .post-attribution {
