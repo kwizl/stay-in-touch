@@ -16,12 +16,19 @@ class AddSeqAndTriggerToPosts < ActiveRecord::Migration[5.2]
               RETURN NEW;
             END
             $BODY$;
+
+            CREATE TRIGGER trg_comments_count
+            AFTER INSERT
+            ON public.comments
+            FOR EACH ROW
+            EXECUTE PROCEDURE public.trg_comments_count_fn();
         SQL
       end
       dir.down do
         execute <<-SQL
           DROP SEQUENCE comments_count_seq;
-          DROP FUNCTION public.trg_comments_count_fn();       
+          DROP TRIGGER trg_comments_count ON public.comments; 
+          DROP FUNCTION public.trg_comments_count_fn(); 
         SQL
       end
     end
