@@ -1,5 +1,6 @@
 class FriendshipsController < ApplicationController
   before_action :set_status, only: [:update]
+  before_action :authenticate_user!
 
   def index
     @friends = current_user.friends
