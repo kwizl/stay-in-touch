@@ -11,9 +11,9 @@
   <p class="post-content">
     <%= post.content %>
   </p>
-  <div class="post-footer d-flex">
-    <div class="counter-content"><%= pluralize(post.comments_count, 'comment') %></div>
-    <div class="counter-content"><%= pluralize(post.likes_count, 'like') %></div>
+  <div class="post-footer">
+    <div class="counter-content"><%= pluralize(post.comments.count, 'comment') %></div>
+    <div class="counter-content"><%= pluralize(post.likes.count, 'like') %></div>
   </div>
   <div class='post-comments-section'>
     <% post.comments.each do |comment| %>
