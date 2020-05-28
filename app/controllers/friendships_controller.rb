@@ -23,27 +23,27 @@ class FriendshipsController < ApplicationController
   def update
     @friendship = Friendship.find(params[:friendship])
 
-    if @friendship.update(friendship_params)
-      flash[:notice] = 'Invitation successfully accepted.'
-      redirect_to user_invitations_path
-    end
+    return unless @friendship.update(friendship_params)
+
+    flash[:notice] = 'Invitation successfully accepted.'
+    redirect_to user_invitations_path
   end
 
   def destroy
     @invites = Friendship.find(params[:id])
 
-    if @invites.destroy
-      flash[:notice] = 'Invitation was successfully rejected.'
-      redirect_to user_invitations_path
-    end
+    return unless @invites.destroy
+
+    flash[:notice] = 'Invitation was successfully rejected.'
+    redirect_to user_invitations_path
   end
 
   private
- 
+
   def friendship_params
     params.permit(:status)
   end
-  
+
   def set_status
     params[:status] = params[:new_status]
   end

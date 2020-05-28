@@ -2,7 +2,7 @@ module UsersHelper
   def send_button(user)
     html = ''
 
-    if !current_user.friend?(user)
+    unless current_user.friend?(user)
       pending_friend = current_user.pending_friends.find { |friend| friend.id == user.id }
       if pending_friend
         title = 'Pending'
@@ -12,7 +12,9 @@ module UsersHelper
         link = send_invitation_path(user_id: user.id)
       end
 
-      html = button_to title, link, class: "btn btn-primary", disabled: pending_friend, data: { disabled_with: 'Pending' }
+      html = button_to title, link, class: 'btn btn-primary',
+                        disabled: pending_friend,
+                        data: { disabled_with: 'Pending' }
     end
 
     html.html_safe

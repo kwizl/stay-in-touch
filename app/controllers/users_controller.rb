@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @users = User.find_by_sql(["SELECT * FROM users WHERE id != ? ", current_user.id])
+    @users = User.find_by_sql(['SELECT * FROM users WHERE id != ? ', current_user.id])
   end
 
   def show
@@ -13,6 +13,8 @@ class UsersController < ApplicationController
 
   def user_invitations
     @invites = Friendship.find_by_sql(
-      ["SELECT * FROM users u JOIN friendships f ON u.id = f.user_id WHERE f.status = 'p' AND f.friend_id = ?", current_user.id])
+      ["SELECT * FROM users u JOIN friendships f ON u.id = f.user_id
+      WHERE f.status = 'p' AND f.friend_id = ?", current_user.id]
+    )
   end
 end
