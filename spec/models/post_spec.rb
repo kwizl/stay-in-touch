@@ -8,8 +8,10 @@ RSpec.describe Post, type: :model do
   end
   context 'Validation tests' do
     let(:user) { create(:user) }
+    let(:post) { attributes_for(:post) }
+
     it 'should save post' do
-      data = user.posts.build(:content => 'MyString is String')
+      data = user.posts.build(post)
       expect(data.save).to be(true)
     end
   end
