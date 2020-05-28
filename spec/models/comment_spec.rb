@@ -6,11 +6,15 @@ RSpec.describe Comment, type: :model do
     it { should belong_to(:post) }
   end
   context 'Validation tests' do
-    let(:post) { create(:post) }
+    let(:user) { create(:user) }
+    let(:post) { attributes_for(:post) }
+    let(:comment) { attributes_for(:comment) }
 
     it 'should save comment' do
-      comment = post.comments.build(:content => 'MyString is String')
-      expect(comment.save).to be(true)
+      user_post = user.posts.create(post)
+      comment_test = user_post.comments.build(comment)
+      comment_test.user = user
+      expect(comment_test.save).to be(true)
     end
   end
 end

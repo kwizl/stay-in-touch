@@ -42,6 +42,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'rspec-rails', '~> 4.0.0'
+  gem 'rspec-core', '~> 3.9', '>= 3.9.2'
   gem 'factory_bot_rails', '~> 5.2'
   gem 'rubocop-rails'
   # Capybara, the library that allows us to interact with the browser using Ruby
