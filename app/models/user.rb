@@ -19,8 +19,8 @@ class User < ApplicationRecord
   end
 
   def confirm_friend(user_id)
-    friendship = inverse_friendships.find { |friendship| friendship.user_id == user_id && friendship.status == 'p' }
-    friendship&.update_attribute(:status, 'a')
+    friendship = inverse_friendships.find { |f| f.user_id == user_id && f.status == 'p' }
+    friendship.update_attribute(:status, 'a')
   end
 
   def friend?(user)
@@ -33,12 +33,12 @@ class User < ApplicationRecord
   end
 
   def pending_friends
-    friends_array = friendships.map { |friendship| friendship.friend if friendship.status == 'p' }
+    friends_array = friendships.map { |f| f.friend if f.status == 'p' }
     friends_array.compact
   end
 
   def reject_friend(user)
-    friendship = inverse_friendships.find { |friendship| friendship.user == user }
-    friendship&.update_attribute(:status, 'r')
+    friendship = inverse_friendships.find { |f| f.user == user }
+    friendship.update_attribute(:status, 'r')
   end
 end

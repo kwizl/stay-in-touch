@@ -13,8 +13,8 @@ module UsersHelper
       end
 
       html = button_to title, link, class: 'btn btn-primary',
-                        disabled: pending_friend,
-                        data: { disabled_with: 'Pending' }
+                                    disabled: pending_friend,
+                                    data: { disabled_with: 'Pending' }
     end
 
     html.html_safe
