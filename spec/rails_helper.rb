@@ -34,10 +34,6 @@ RSpec.configure do |config|
     DatabaseCleaner.strategy = :transaction
   end
 
-  config.before :each, driver: :selenium_chrome, js: true do
-    DatabaseCleaner.strategy = :truncation
-  end
-
   config.after :each, driver: :selenium_chrome do
     load "#{Rails.root}/db/seeds.rb"
   end
@@ -45,7 +41,6 @@ RSpec.configure do |config|
   config.after do
     DatabaseCleaner.clean
   end
-
 end
 
 Shoulda::Matchers.configure do |config|
