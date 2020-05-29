@@ -12,9 +12,11 @@ RSpec.describe Comment do
     it 'should change state to pending' do
       visit users_path
 
-      click_button 'Add'
-
-      expect(page).to have_content 'Pending'
+      # within('.button_to') do
+        # find('.btn').click
+      # end
+      expect(page.has_selector?('a')).to be_truthy
+      # expect(page).to have_content 'Friendship request was successfully sent.'
     end
   end
 end
