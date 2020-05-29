@@ -34,11 +34,15 @@ RSpec.configure do |config|
     DatabaseCleaner.strategy = :transaction
   end
 
+  config.before(:all) do
+    DatabaseCleaner.strategy = :truncation
+  end
+
   config.after :each, driver: :selenium_chrome do
     load "#{Rails.root}/db/seeds.rb"
   end
 
-  config.after do
+  config.after(:all) do
     DatabaseCleaner.clean
   end
 end

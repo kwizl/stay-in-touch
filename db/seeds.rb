@@ -12,4 +12,10 @@ User.create!(name: "Abdel Pérez", email: "juniorperezpy@gmail.com",
 User.create!(name: "Martin Njoroge", email: "example@rails.com",
   password: "123456", password_confirmation: "123456")
 
+User.create!(name: "Susan Cho", email: "example@railsgirls.com",
+  password: "123456", password_confirmation: "123456")
+
+User.create!(name: "Ivan Diaz", email: "ivan@rails.com",
+  password: "123456", password_confirmation: "123456")
+
 User.first.posts.create(content: "Post1")

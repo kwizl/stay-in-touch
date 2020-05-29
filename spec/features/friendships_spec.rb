@@ -10,8 +10,18 @@ RSpec.describe Friendship, driver: :selenium_chrome, js: true do
       login_as(user)
       visit users_path
 
-      click_button 'Add'
-      click_button 'Add'
+      within 'ul li:first-child form' do
+        click_button 'Add'
+      end
+
+      within 'ul li:nth-child(2) form' do
+        click_button 'Add'
+      end
+
+      within 'ul li:nth-child(3) form' do
+        click_button 'Add'
+      end
+
       expect(page).to have_content 'Friendship request was successfully sent.'
     end
 
@@ -24,11 +34,12 @@ RSpec.describe Friendship, driver: :selenium_chrome, js: true do
     end
 
     it 'should display invitation rejection confirmation' do
-      login_as(second_friend)
+      login_as(another_friend)
       visit user_invitations_path
 
       click_button 'Reject'
-      expect(page).to have_content 'Friendship request was successfully rejected.'
+      page.driver.browser.switch_to.alert.accept
+      expect(page).to have_content 'Invitation was successfully rejected.'
     end
   end
 end
