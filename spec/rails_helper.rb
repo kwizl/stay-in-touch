@@ -46,10 +46,6 @@ RSpec.configure do |config|
     DatabaseCleaner.clean
   end
 
-  config.before(:all) do
-    u = User.first
-    u.posts.create(content: 'post 1')
-  end
 end
 
 Shoulda::Matchers.configure do |config|

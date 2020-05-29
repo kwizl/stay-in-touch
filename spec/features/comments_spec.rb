@@ -12,11 +12,11 @@ RSpec.describe Comment, driver: :selenium_chrome, js: true do
     it 'should create a comment' do
       visit root_path
 
-      # within('#new_post') do
-      #   fill_in 'Content', with: post[:content]
-      # end
+      within('#new_post') do
+        fill_in 'Content', with: post[:content]
+      end
 
-      # click_button 'Save'
+      click_button 'Save'
       sleep(3)
       within('#new_comment') do
         fill_in with: comment[:content], id: 'comment_content'
