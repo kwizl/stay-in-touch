@@ -2,10 +2,12 @@ require 'rails_helper'
 
 RSpec.describe Comment, driver: :selenium_chrome, js: true do
   let(:user) { create(:user) }
-  let(:post) { create(:post) }
+  let(:post) { attributes_for(:post) }
   let(:comment) { attributes_for(:comment) }
   before(:each) do
     login_as(user)
+
+    @timeline_posts = build(:post)
   end
 
   describe 'the create comments process' do
@@ -17,7 +19,7 @@ RSpec.describe Comment, driver: :selenium_chrome, js: true do
       end
 
       click_button 'Save'
-      sleep(3)
+
       within('#new_comment') do
         fill_in with: comment[:content], id: 'comment_content'
       end
