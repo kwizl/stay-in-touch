@@ -51,6 +51,7 @@ group :development, :test do
   # The following gems aids with the nuts and bolts
   # of interacting with the browser.
   gem 'database_cleaner', '~> 1.8', '>= 1.8.5'
+  gem 'selenium-webdriver', '~> 3.142', '>= 3.142.7'
 end
 
 group :test do
