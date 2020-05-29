@@ -7,10 +7,10 @@ RSpec.describe Post do
     login_as(user)
   end
 
-  describe "the create posts process" do
-    it "should create a post" do
+  describe 'the create posts process' do
+    it 'should create a post' do
       visit root_path
-      within("#new_post") do
+      within('#new_post') do
         fill_in 'Content', with: post[:content]
       end
       click_button 'Save'
