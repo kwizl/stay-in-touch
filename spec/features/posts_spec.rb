@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe Post do
-  let(:user) { create(:user) }
+RSpec.describe Post, driver: :selenium_chrome, js: true do
+  let(:user) { User.first }
   let(:post) { attributes_for(:post) }
   before(:each) do
     login_as(user)
@@ -14,6 +14,7 @@ RSpec.describe Post do
       within('#new_post') do
         fill_in 'Content', with: post[:content]
       end
+
       click_button 'Save'
       expect(page).to have_content 'Post was successfully created.'
     end

@@ -30,20 +30,29 @@ RSpec.configure do |config|
     Warden.test_reset!
   end
 
-  config.before do
+  config.before(:suite) do
+    DatabaseCleaner.clean_with(:truncation)
+  end
+
+  config.before(:each) do
     DatabaseCleaner.strategy = :transaction
   end
 
-  config.before(:all) do
+  config.before(:all, js: true) do
     DatabaseCleaner.strategy = :truncation
   end
 
-  config.after :each, driver: :selenium_chrome do
+  config.before :all do
     load "#{Rails.root}/db/seeds.rb"
   end
 
   config.after(:all) do
     DatabaseCleaner.clean
+  end
+
+  config.after(:all, js: true) do
+    DatabaseCleaner.clean_with(:truncation)
+    puts "database cleaned with truncation"
   end
 end
 

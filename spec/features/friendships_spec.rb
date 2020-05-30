@@ -30,7 +30,7 @@ RSpec.describe Friendship, driver: :selenium_chrome, js: true do
       visit user_invitations_path
 
       click_button 'Accept'
-      expect(page).to have_content 'Friendship request was successfully sent.'
+      expect(page).to have_content 'Invitation successfully accepted.'
     end
 
     it 'should display invitation rejection confirmation' do
