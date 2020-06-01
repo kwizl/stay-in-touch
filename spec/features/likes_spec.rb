@@ -7,7 +7,7 @@ RSpec.describe Like, driver: :selenium_chrome, js: true do
     login_as(user)
   end
 
-  it 'should increment a like' do
+  it 'should like a post and dislike a post' do
     visit root_path
     
     within('.post-liking') do
