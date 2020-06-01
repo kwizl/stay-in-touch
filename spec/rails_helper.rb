@@ -42,7 +42,7 @@ RSpec.configure do |config|
     DatabaseCleaner.strategy = :truncation
   end
 
-  config.before :all do
+  config.before :suite do
     load "#{Rails.root}/db/seeds.rb"
   end
 
@@ -50,9 +50,8 @@ RSpec.configure do |config|
     DatabaseCleaner.clean
   end
 
-  config.after(:all, js: true) do
+  config.after(:suite, js: true) do
     DatabaseCleaner.clean_with(:truncation)
-    puts 'database cleaned with truncation'
   end
 end
 
