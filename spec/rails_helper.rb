@@ -52,7 +52,7 @@ RSpec.configure do |config|
 
   config.after(:all, js: true) do
     DatabaseCleaner.clean_with(:truncation)
-    puts "database cleaned with truncation"
+    puts 'database cleaned with truncation'
   end
 end
 

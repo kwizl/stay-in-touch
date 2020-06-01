@@ -9,13 +9,13 @@ RSpec.describe Like, driver: :selenium_chrome, js: true do
 
   it 'should like a post and dislike a post' do
     visit root_path
-    
+
     within('.post-liking') do
       click_link('Like!')
     end
 
     expect(page).to have_content 'You liked a post.'
- 
+
     within('.post-liking') do
       click_link('Dislike!')
     end

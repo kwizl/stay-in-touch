@@ -10,7 +10,7 @@ RSpec.describe Post, driver: :selenium_chrome, js: true do
   describe 'the create posts process' do
     it 'should create a post' do
       visit root_path
-      
+
       within('#new_post') do
         fill_in 'Content', with: post[:content]
       end
