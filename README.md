@@ -19,7 +19,8 @@ To get a local copy up and running follow these simple example steps.
 
 Ruby: 2.6.3
 Rails: 5.2.3
-Postgres: >=9.5
+Postgres: >= 9.5
+Chromium Chrome Driver: 81.0
 
 ### Setup
 
@@ -34,8 +35,8 @@ bundle install
 Setup database with:
 
 ```
-   rails db:create
-   rails db:migrate
+rails db:create
+rails db:migrate
 ```
 
 
@@ -44,23 +45,19 @@ Setup database with:
 Start server with:
 
 ```
-    rails s
+rails s
 ```
 
 Open `http://localhost:3000/` in your browser.
 
 ### Run tests
 
-Install chromium chrome driver [link](https://chromedriver.chromium.org/downloads)
-
-```
-    sudo apt-get install chromium-chromedriver
-```
+Make sure to have installed chromium chrome driver [link](https://chromedriver.chromium.org/downloads)
 
 And then run:
 
 ```
-    rpsec
+rpsec
 ```
 
 > All tests are contained in the rspec folder which is in the root directory of the project. To run all test type **rspec** in the terminal. To run a specific test type **rspec spec/folder_name/spec_file.rb**
