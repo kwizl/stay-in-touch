@@ -1,6 +1,6 @@
 # Scaffold for social media app with Ruby on Rails
 
-> This repo includes intial code for social media app with basic styling. Its purpose is to be a starting point for Microverse students.
+> This project consists of a basic Social Media App. The features of the project include signing up as a user and sending friend request to other users. The other users can accept or reject the friend request. On the timeline page, only the posts belonging to the signed in user and his/her firends can be viewed.
 
 ## Built With
 
@@ -10,7 +10,6 @@
 ## Live Demo
 
 TBA
-
 
 ## Getting Started
 
@@ -24,7 +23,9 @@ Postgres: >=9.5
 
 ### Setup
 
-Instal gems with:
+Clone the repo
+
+Install gems with:
 
 ```
 bundle install
@@ -55,7 +56,7 @@ Open `http://localhost:3000/` in your browser.
     rpsec --format documentation
 ```
 
-> Tests will be added by Microverse students. There are no tests for initial features in order to make sure that students write all tests from scratch.
+> All tests are contained in the rspec folder which is in the root directory of the project. To run all test type **rspec** in the terminal. To run a specific test type **rspec spec/folder_name/spec_file.rb**
 
 ### Deployment
 
@@ -63,7 +64,17 @@ TBA
 
 ## Authors
 
-TBA
+👤 **Martin Njoroge**
+
+- Github: [@kwizl](https://github.com/kwizl)
+- Twitter: [@NjoroKaris](https://twitter.com/NjoroKaris)
+- Linkedin: [martin njoroge](https://www.linkedin.com/in/martin-njoroge-098774110/)
+
+👤 **Abdel Omar Pérez Téllez**
+
+- Github: [abdelp](https://github.com/abdelp)
+- Twitter: [@abdelperez11](https://twitter.com/abdelperez11) 
+- Linkedin: [abdel-perez](https://www.linkedin.com/in/abdel-perez/)
 
 ## 🤝 Contributing
 
