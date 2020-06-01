@@ -1,6 +1,6 @@
 # Scaffold for social media app with Ruby on Rails
 
-> This project consists of a basic Social Media App. The features of the project include signing up as a user and sending friend request to other users. The other users can accept or reject the friend request. On the timeline page, only the posts belonging to the signed in user and his/her firends can be viewed.
+> This project consists of a basic Social Media App. The features of the project include signing up as a user and sending friend request to other users. The other users can accept or reject the friend request. On the timeline page, only the posts belonging to the signed in user and his/her friends can be viewed.
 
 ## Built With
 
@@ -39,21 +39,28 @@ Setup database with:
 ```
 
 
-
 ### Usage
 
 Start server with:
 
 ```
-    rails server
+    rails s
 ```
 
 Open `http://localhost:3000/` in your browser.
 
 ### Run tests
 
+Install chromium chrome driver [link](https://chromedriver.chromium.org/downloads)
+
 ```
-    rpsec --format documentation
+    sudo apt-get install chromium-chromedriver
+```
+
+And then run:
+
+```
+    rpsec
 ```
 
 > All tests are contained in the rspec folder which is in the root directory of the project. To run all test type **rspec** in the terminal. To run a specific test type **rspec spec/folder_name/spec_file.rb**
