@@ -1,13 +1,5 @@
 <section class="users-section">
   <ul class="users-list">
-    <% @users.each do |user| %>
-      <li>
-        Name: <%= user.name %>
-        <span class="profile-link">
-          <%= link_to 'See Profile', user_path(user), class: 'profile-link' %>
-        </span>
-        <%= send_button(user) %>
-      </li>
-    <% end %>
+    <%= index_helper %>
   </ul>
 </section>
