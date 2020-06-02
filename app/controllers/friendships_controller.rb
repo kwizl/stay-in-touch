@@ -11,10 +11,10 @@ class FriendshipsController < ApplicationController
 
     respond_to do |format|
       if @friendship.save
-        format.html { redirect_to users_path, notice: 'Friendship request was successfully sent.' }
+        format.html { redirect_back(fallback_location: users_path, notice: 'Friendship request was successfully sent.') }
         format.json { render :show, status: :created, location: @friendship }
       else
-        format.html { redirect_to users_path }
+        format.html { redirect_back(fallback_location: users_path) }
         format.json { render json: @friendship.errors, status: :unprocessable_entity }
       end
     end

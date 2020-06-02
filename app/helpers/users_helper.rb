@@ -2,7 +2,7 @@ module UsersHelper
   def send_button(user)
     html = ''
 
-    unless current_user.friend?(user)
+    if !current_user.friend?(user) && current_user != user
       pending_friend = current_user.pending_friends.find { |friend| friend.id == user.id }
       if pending_friend
         title = 'Pending'
