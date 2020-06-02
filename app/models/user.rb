@@ -41,4 +41,8 @@ class User < ApplicationRecord
     friendship = inverse_friendships.find { |f| f.user == user }
     friendship.update_attribute(:status, 'r')
   end
+
+  def self.users_index(current_user)
+    find_by_sql(['SELECT * FROM users WHERE id != ? ', current_user])
+  end
 end

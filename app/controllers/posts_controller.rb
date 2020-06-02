@@ -20,13 +20,7 @@ class PostsController < ApplicationController
   private
 
   def timeline_posts
-    @timeline_posts ||= Post.find_by_sql(['SELECT p.*
-      FROM posts p
-      LEFT JOIN friendships f ON f.user_id = p.user_id
-      AND f.friend_id = ?
-      AND f.status = \'a\'
-      WHERE COALESCE(f.friend_id, p.user_id) = ?
-      ORDER BY p.created_at DESC', current_user.id, current_user.id])
+    @timeline_posts ||= Post.posts_timeline(current_user.id)
   end
 
   def post_params
