@@ -4,9 +4,9 @@ module FriendshipsHelper
     @friends.each do |user|
       html += <<-HTML
       <li>
-        Name: #{ user.name }
+        Name: #{user.name}
         <span class="profile-link">
-          #{ link_to 'See Profile',  user_path(user), class: 'profile-link' }
+          #{link_to 'See Profile', user_path(user), class: 'profile-link'}
         </span>
       </li>
       HTML
