@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.7.0'
+ruby '2.6.5'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.4'
@@ -25,7 +25,7 @@ gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
@@ -41,6 +41,17 @@ gem 'devise'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'factory_bot_rails', '~> 5.2'
+  gem 'rspec-core', '~> 3.9', '>= 3.9.2'
+  gem 'rspec-rails', '~> 4.0.0'
+  gem 'rubocop-rails'
+  # Capybara, the library that allows us to interact with the browser using Ruby
+  gem 'capybara', '>= 2.15'
+  gem 'shoulda-matchers'
+  # The following gems aids with the nuts and bolts
+  # of interacting with the browser.
+  gem 'database_cleaner', '~> 1.8', '>= 1.8.5'
+  gem 'selenium-webdriver', '~> 3.142', '>= 3.142.7'
 end
 
 group :test do

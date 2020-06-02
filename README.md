@@ -1,6 +1,5 @@
 # Social Media App with Ruby on Rails
-
-> This repo contains code for a social media web application. The application enables registration of users, Sign In of users, posting comments, liking posts and sending friendship request.
+This repo contains code for a social media web application. The application enables registration of users, Sign In of users, posting comments, liking posts and sending friendship request.
 
 ## Built With
 
@@ -11,7 +10,6 @@
 
 TBA
 
-
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.
@@ -20,11 +18,14 @@ To get a local copy up and running follow these simple example steps.
 
 Ruby: 2.6.3
 Rails: 5.2.3
-Postgres: >=9.5
+Postgres: >= 9.5
+Chromium Chrome Driver: 81.0
 
 ### Setup
 
-Instal gems with:
+Clone the repo
+
+Install gems with:
 
 ```
 bundle install
@@ -33,10 +34,9 @@ bundle install
 Setup database with:
 
 ```
-   rails db:create
-   rails db:migrate
+rails db:create
+rails db:migrate
 ```
-
 
 
 ### Usage
@@ -47,10 +47,22 @@ You can clone or download this repo (you need ruby installed in your computer).
 Start server with:
 
 ```
-    rails server
+rails s
 ```
 Open `http://localhost:3000/` in your browser.
 
+
+### Run tests
+
+Make sure to have installed chromium chrome driver [link](https://chromedriver.chromium.org/downloads)
+
+And then run:
+
+```
+rpsec
+```
+
+> All tests are contained in the rspec folder which is in the root directory of the project. To run all test type **rspec** in the terminal. To run a specific test type **rspec spec/folder_name/spec_file.rb**
 
 ## Authors
 
