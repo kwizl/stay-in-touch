@@ -14,13 +14,9 @@ RSpec.describe Friendship, driver: :selenium_chrome, js: true do
         click_button 'Add'
       end
 
-      within 'ul li:nth-child(2) form' do
-        click_button 'Add'
-      end
+      visit user_path another_friend
 
-      within 'ul li:nth-child(3) form' do
-        click_button 'Add'
-      end
+      click_button 'Add'
 
       expect(page).to have_content 'Friendship request was successfully sent.'
     end
