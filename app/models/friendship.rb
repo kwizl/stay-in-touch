@@ -13,7 +13,8 @@ class Friendship < ApplicationRecord
   end
 
   private
-    def different_users?
-      errors.add(:friend_id, "friend must be different") unless user_id != friend_id
-    end
+
+  def different_users?
+    errors.add(:friend_id, 'friend must be different') unless user_id != friend_id
+  end
 end
