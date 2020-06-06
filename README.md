@@ -8,7 +8,9 @@ This repo contains code for a social media web application. The application enab
 
 ## Live Demo
 
-TBA
+[Live Demo](https://social-media.herokuapp.com/)
+
+![screenshot](./app/assets/images/app_screenshot.png)
 
 ## Getting Started
 
