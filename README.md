@@ -1,5 +1,5 @@
 # Social Media App with Ruby on Rails
-This repo contains code for a social media web application. The application enables registration of users, Sign In of users, posting comments, liking posts, and sending friend requests.
+This repo contains code for a social media web application. The application allows for user registration and sign-in, posting comments, liking posts and sending friendship requests.
 
 ## Built With
 
